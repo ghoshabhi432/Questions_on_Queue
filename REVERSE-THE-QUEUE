@@ -1,0 +1,32 @@
+//Reverse Queue using stack 
+tc: 0(n)     ,sc: 0(n)
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	// your code goes here
+	queue<int> q;
+	q.push(10);
+	q.push(20);
+	q.push(30);
+	q.push(40);
+
+	stack<int> s;
+    while(!q.empty()){
+        int ele=q.front();
+        q.pop();
+        s.push(ele);
+    }
+    //cout<<s.size();
+    queue<int> q1;
+    while(!s.empty()){
+        int el=s.top();
+        s.pop();
+        q1.push(el);
+    }
+    //cout<<q1.size();
+    while(!q1.empty()){
+        cout<<q1.front()<<" ";
+        q1.pop();
+    }
+	return 0;
+}
